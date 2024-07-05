@@ -30,6 +30,9 @@ namespace GLTest.Core.Migrations
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -44,9 +47,6 @@ namespace GLTest.Core.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -58,13 +58,13 @@ namespace GLTest.Core.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("GLTest.Core.Domains.Products.Product", b =>
+            modelBuilder.Entity("GLTest.Core.Domains.Products.Category", b =>
                 {
-                    b.HasOne("GLTest.Core.Domains.Categories.Category", "Category")
+                    b.HasOne("GLTest.Core.Domains.Products.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("ProductId");
 
-                    b.Navigation("Category");
+                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }
