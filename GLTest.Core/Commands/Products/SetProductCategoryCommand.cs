@@ -29,7 +29,7 @@ namespace GLTest.Core.Commands.Products
             if (category == null)
                 return new CommandResult<bool>("Set_Product_Category_Category_NotFound", "Category not found. ");
 
-            product.SetCategory(category.CategoryId);
+            category.SetProduct(product.ProductId);
             await _unitOfWork.CommitAsync();
 
             return new CommandResult<bool>(true);
