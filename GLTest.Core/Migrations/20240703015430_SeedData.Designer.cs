@@ -38,6 +38,7 @@ namespace GLTest.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoryId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Categories");
                 });
@@ -52,8 +53,6 @@ namespace GLTest.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
