@@ -21,9 +21,9 @@ namespace GLTest.Core.Domains.Categories
             };
         }
 
-        public void SetProduct(Guid categoryId)
+        public void SetProduct(Guid productId)
         {
-            CategoryId = categoryId;
+            ProductId = productId;
         }
     }
 }
